@@ -1,0 +1,103 @@
+/* Ocean Blues Palette */
+
+:root {
+    --primary-color: #e43b44; /* Bright Blue */
+    --secondary-color: #6C757D; /* Gray */
+    --accent-color: #17A2B8; /* Teal */
+    --background-color: #E9F2F5; /* Light Blue */
+    --text-color: #212529; /* Dark Text */
+    --card-bg-color: #ffffff; /* White for card body */
+    --shadow-color: rgba(0, 0, 0, 0.15); /* Shadow color */
+}
+
+/* General Container */
+.container {
+    background-color: var(--background-color);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 30px var(--shadow-color);
+    max-width: 800px; /* Set max width for container */
+    margin: auto; /* Centering the container */
+}
+
+/* Heading */
+h1 {
+    color: var(--primary-color);
+    text-align: center; /* Center align heading */
+    font-size: 2.5rem; /* Increase font size */
+    margin-bottom: 20px; /* Spacing below heading */
+}
+
+/* Question Card */
+.card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background-color: var(--card-bg-color); /* Use card background color variable */
+}
+
+/* Card Body */
+.card-body {
+    padding: 20px;
+    position: relative; /* For positioning the button */
+}
+
+/* Card Title */
+.card-title {
+    color: var(--primary-color);
+    font-weight: bold; /* Bold font for titles */
+    font-size: 1.5rem; /* Increase title size */
+}
+
+/* Card Text */
+.card-text {
+    color: var(--text-color);
+    margin: 10px 0; /* Margin for spacing */
+    font-size: 1rem; /* Base font size */
+}
+
+/* Button */
+.btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 5px; /* Rounded corners for buttons */
+    padding: 10px 15px; /* Increased padding */
+    color: #ffffff; /* White text for button */
+    font-size: 1rem; /* Button font size */
+    transition: background-color 0.3s, transform 0.2s; /* Animation for hover */
+}
+
+/* Button Hover Effect */
+.btn-primary:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-2px); /* Lift effect */
+}
+
+/* Card Hover Effect */
+.card:hover {
+    transform: translateY(-5px); /* Lift effect on card hover */
+    box-shadow: 0 10px 30px var(--shadow-color); /* Deeper shadow on hover */
+}
+
+/* Error Message Styling */
+#fetchError {
+    color: var(--secondary-color);
+    text-align: center; /* Center align error message */
+    font-weight: bold; /* Bold error text */
+    margin-top: 20px; /* Margin above error */
+}
+
+/* Media Query for Responsiveness */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem; /* Smaller font size on mobile */
+    }
+    .card-title {
+        font-size: 1.25rem; /* Smaller title on mobile */
+    }
+    .btn-primary {
+        font-size: 0.9rem; /* Smaller button font on mobile */
+        padding: 8px 12px; /* Smaller padding on mobile */
+    }
+}

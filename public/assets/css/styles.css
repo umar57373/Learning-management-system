@@ -1,0 +1,603 @@
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-image: url('../public/Learning-Management-System.jpg'); /* Adjust the path as necessary */
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent repeating */
+}
+
+/* Header Styling */
+header {
+    background-color: rgba(44, 62, 80, 0.8); /* Semi-transparent background */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo h1 {
+    font-size: 2.4rem;
+    color: #ecf0f1;
+    font-weight: 700;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    margin-right: 20px;
+}
+
+nav {
+    background-color: rgba(44, 62, 80, 0.9); /* Darker navbar for better contrast */
+    padding: 15px 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Slight shadow for depth */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between; /* Title on left, nav items on right */
+    align-items: center;
+}
+
+nav .title {
+    color: #ecf0f1;
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+nav ul {
+    display: flex;
+    justify-content: flex-end; /* Ensure the nav items are pushed to the right */
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-grow: 1; /* Allows the ul to take up the remaining space to push the items right */
+}
+
+nav ul li {
+    margin-left: 2rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ecf0f1; /* Light text color for better contrast */
+    font-weight: 600;
+    font-size: 1.2rem; /* Slightly larger font for better readability */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    padding: 10px 15px;
+    border-radius: 6px;
+    position: relative;
+    display: inline-block;
+}
+
+/* Add subtle box shadow for visual pop on hover */
+nav ul li a:hover {
+    color: #3498db;
+    background-color: rgba(255, 255, 255, 0.1); /* Background lightens on hover */
+    box-shadow: 0px 4px 12px rgba(52, 152, 219, 0.3); /* Light blue shadow */
+    transform: translateY(-3px); /* Slight lifting effect on hover */
+}
+
+/* Add an underline indicator effect */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: #3498db;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%; /* Underline expands on hover */
+}
+
+/* Responsive Design for Mobile */
+@media screen and (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack nav items vertically on smaller screens */
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    nav ul li a {
+        font-size: 1.1rem;
+        padding: 8px 10px;
+    }
+}
+
+
+
+
+/* Main Section Styling */
+.intro {
+    text-align: center;
+    padding: 100px 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white background for readability */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    margin: 40px auto;
+    max-width: 1000px;
+}
+
+.intro h1 {
+    font-size: 3.5rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.intro p {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    color: #7f8c8d;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Buttons */
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.btn {
+    background-color: #3498db;
+    color: white;
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    margin: 0 0.75rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow: 0 4px 6px rgba(52, 152, 219, 0.2);
+}
+
+.btn:hover {
+    background-color: #2980b9;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 8px rgba(52, 152, 219, 0.3);
+}
+
+.btn.register {
+    background-color: #e74c3c;
+    box-shadow: 0 4px 6px rgba(231, 76, 60, 0.2);
+}
+
+.btn.register:hover {
+    background-color: #c0392b;
+    box-shadow: 0 6px 8px rgba(231, 76, 60, 0.3);
+}
+
+/* Footer Styling */
+/* Footer Styles */
+footer {
+    background-color: rgba(44, 62, 80, 0.8); /* Semi-transparent background */
+    color: white;
+    padding: 40px 20px; /* Added padding for better spacing */
+    text-align: left; /* Align text to the left for footer content */
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between; /* Spread the columns evenly */
+    flex-wrap: wrap; /* Make it responsive */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-column {
+    flex-basis: 30%; /* Each column takes up roughly a third of the footer */
+    margin-bottom: 20px;
+}
+
+.footer-column h3 {
+    color: #ffffff;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: #bdc3c7;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+    color: #3498db;
+    text-decoration: underline;
+}
+
+/* Social Icons */
+.social-icons a {
+    color: white;
+    font-size: 1.5rem;
+    margin-right: 10px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #3498db;
+}
+
+.footer-column.newsletter form {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-column.newsletter input[type="email"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.footer-column.newsletter button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.footer-column.newsletter button:hover {
+    background-color: #2980b9;
+}
+
+/* Copyright Section */
+.copyright {
+    margin-top: 20px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 20px;
+}
+
+.copyright p {
+    color: #bdc3c7;
+    font-size: 1rem;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-column {
+        flex-basis: 100%; /* Stack columns on small screens */
+        text-align: center;
+    }
+
+    .social-icons a {
+        margin-right: 20px;
+        font-size: 1.2rem;
+    }
+
+    .footer-column.newsletter form {
+        align-items: center;
+    }
+}
+
+
+/* Dashboard Table Styling */
+.dashboard {
+    padding: 2rem;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 1rem;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #333;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* About Us Section */
+main {
+    padding: 2rem;
+}
+
+.about {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.about h2 {
+    color: #333;
+    margin-top: 20px;
+    font-size: 1.8rem;
+}
+
+.about p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 1.5rem 0;
+    color: #666;
+}
+
+.about p:first-of-type {
+    margin-top: 0;
+}
+/* Success Section Styles */
+.success-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full viewport height */
+    background-color: #ecf0f1; /* Light background color */
+}
+
+.success-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    max-width: 600px;
+    text-align: center;
+}
+
+.success-container h2 {
+    font-size: 2rem;
+    color: #27ae60; /* Success green color */
+    margin-bottom: 20px;
+}
+
+.success-container p {
+    font-size: 1.2rem;
+    color: #34495e; /* Darker text color */
+    margin-bottom: 15px;
+}
+
+.success-container img {
+    max-width: 100px;
+    margin: 20px 0;
+}
+
+.success-container #countdown {
+    font-size: 1rem;
+    color: #e74c3c; /* Red color for countdown emphasis */
+    margin-top: 20px;
+}
+
+.success-link {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 10px 20px;
+    background-color: #3498db; /* Button background color */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.success-link:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .success-container {
+        padding: 30px;
+    }
+
+    .success-container h2 {
+        font-size: 1.8rem;
+    }
+
+    .success-container p {
+        font-size: 1.1rem;
+    }
+
+    .success-container img {
+        max-width: 80px;
+    }
+
+    .success-link {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+}
+/* Subscription Success Page Styles */
+.subscribe-container {
+    background-color: white;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    max-width: 600px;
+    margin: 100px auto; /* Center the container */
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+.subscribe-icon {
+    font-size: 3rem;
+    color: #2ecc71; /* Success green color */
+    margin-bottom: 20px;
+}
+
+.subscribe-container h1 {
+    font-size: 2.5rem;
+    color: #2c3e50; /* Dark text color */
+    margin-bottom: 20px;
+}
+
+.subscribe-container p {
+    font-size: 1.2rem;
+    color: #34495e; /* Slightly lighter text color */
+    margin-bottom: 15px;
+}
+
+.subscribe-container strong {
+    color: #3498db; /* Blue color for the email highlight */
+    font-size: 1.1rem;
+}
+
+.offer-text {
+    font-size: 1rem;
+    color: #7f8c8d; /* Gray color for subtle offer text */
+    margin-bottom: 20px;
+}
+
+.subscribe-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #3498db; /* Button background color */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.subscribe-btn:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .subscribe-container {
+        padding: 30px;
+    }
+
+    .subscribe-container h1 {
+        font-size: 2rem;
+    }
+
+    .subscribe-container p {
+        font-size: 1.1rem;
+    }
+
+    .subscribe-btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .error-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .error-container {
+    background-color: white;
+    border-radius: 8px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  h2 {
+    color: #e74c3c;
+    font-size: 2.5rem;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  
+  .error-message {
+    color: #333;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+  }
+  
+  .error-link {
+    display: inline-block;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .error-link:hover {
+    background-color: #2980b9;
+  }
+  .logo img {
+    width: 80px; /* Adjust width according to your design */
+    height: auto; /* This maintains the aspect ratio */
+    display: block; /* Ensures the image behaves as a block element */
+    }

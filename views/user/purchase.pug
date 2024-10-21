@@ -1,0 +1,91 @@
+extends userLayout
+
+block content-head
+    title Purchase a Course
+    // Bootstrap 5.0
+    link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css", integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1", crossorigin="anonymous")
+    // Google font
+    link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap")
+    // FontAwesome icon
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
+    // Custom CSS
+    link(rel="stylesheet" href="/assets/css/userStyle.css")
+    // Bootstrap JS for modals
+    script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js")
+
+block content-body
+    .main-content
+        h1 Purchase a Course
+        // Available courses
+        .available-courses
+            .row#courseContainer
+                // Courses will be dynamically inserted here
+        #fetchError.text-center.text-danger
+
+        // Modal for enrollment form
+        .modal.fade#enrollmentModal(tabindex="-1" role="dialog" aria-labelledby="enrollmentModalLabel" aria-hidden="true")
+            .modal-dialog(role="document")
+                .modal-content
+                    .modal-header
+                        h5.modal-title#enrollmentModalLabel Enroll in a Course
+                        button.btn-close(type="button" data-bs-dismiss="modal" aria-label="Close")
+                    .modal-body
+                        form(action="/user/subscribe" method="post")
+                            input(type="hidden" name="courseTitle" id="courseTitle")
+                            input.form-control.mb-3(type="email" name="email" placeholder="Enter your email" required)
+                            button.btn.btn-primary(type="submit") Enroll
+
+    script.
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('/courses/courses-data')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const courseContainer = document.getElementById('courseContainer');
+                    if (data.courses && data.courses.length > 0) {
+                        data.courses.forEach(course => {
+                            const courseCard = document.createElement('div');
+                            courseCard.classList.add('course-card', 'col-lg-6', 'col-xl-4');
+                            courseCard.innerHTML = `
+                                <a href="javascript:void(0)" class="cart-btn" data-course="${course.title}">
+                                    <figure class="img-caption">
+                                        <img class="card-img" src="${course.imageUrl}" alt="${course.title}">
+                                        <div class="card-caption">
+                                            <figcaption class="card-title">${course.title}</figcaption>
+                                            <div class="card-detail">
+                                                <figcaption>${course.instructor}</figcaption>
+                                                <figcaption>${course.courseCode} | ${course.term}</figcaption>
+                                            </div>
+                                            <figcaption class="go-icon">
+                                                <i class="fa fa-shopping-cart fa-lg" data-course="${course.title}"></i>
+                                            </figcaption>
+                                        </div>
+                                    </figure>
+                                </a>
+                            `;
+                            courseContainer.appendChild(courseCard);
+                        });
+
+                        // Attach click event to cart icons
+                        document.querySelectorAll('.go-icon i').forEach(icon => {
+                            icon.addEventListener('click', function() {
+                                const courseName = this.dataset.course;
+                                document.getElementById('enrollmentModalLabel').textContent = 'Enroll in ' + courseName;
+                                document.getElementById('courseTitle').value = courseName; // Set course title
+                                const modal = new bootstrap.Modal(document.getElementById('enrollmentModal'));
+                                modal.show();
+                            });
+                        });
+                    } else {
+                        courseContainer.innerHTML = '<p class="text-center">No courses available at the moment.</p>';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching the courses:', error);
+                    document.getElementById('fetchError').textContent = 'Failed to load courses. Please try again later.';
+                });
+        });

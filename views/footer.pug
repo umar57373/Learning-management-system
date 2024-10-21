@@ -1,0 +1,23 @@
+footer
+  .footer-container
+    .footer-column
+      h3 Quick Links
+      ul
+        li: a(href="/") Home
+        li: a(href="/aboutus") About Us
+        li: a(href="/services") Services
+        li: a(href="/contact") Contact
+    .footer-column
+      h3 Follow Us
+      .social-icons
+        a(href="#"): i.fab.fa-facebook
+        a(href="#"): i.fab.fa-twitter
+        a(href="#"): i.fab.fa-instagram
+    .footer-column.newsletter
+      h3 Subscribe to Our Newsletter
+      p Get the latest deals and offers directly in your inbox!
+      form(action="/subscribe" method="post" onsubmit="")
+        input(type="email" name="email" placeholder="Enter your email" required)
+        button(type="submit") Subscribe
+  .copyright
+    p &copy; 2024 LMS. All rights reserved.

@@ -1,0 +1,91 @@
+extends layout
+
+block content-head 
+    title Login - LMS
+    style.
+        .login-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 900px;
+            margin: 40px auto;
+        }
+        .form-container {
+            width: 50%;
+            padding: 1rem;
+        }
+        .image-container {
+            width: 45%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        fieldset {
+            border: 2px solid #3498db;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        legend {
+            font-size: 1.5rem;
+            color: #3498db;
+            font-weight: bold;
+            padding: 0 10px;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        .form-group label {
+            display: block;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .btn.reset {
+            background-color: #e74c3c;
+        }
+        .btn.reset:hover {
+            background-color: #c0392b;
+        }
+
+block content-body
+
+    main
+        section.intro
+            h1 Login to Your Account
+            p Access your courses and learning materials.
+
+        section.login-container
+            .form-container
+                form#loginForm(action="/user/login", method="POST")
+                    fieldset
+                        legend Login Form
+                        .form-group
+                            label(for="email") Email:
+                            input(type="email", id="email", name="email", required)
+                        .form-group
+                            label(for="password") Password:
+                            input(type="password", id="password", name="password", minlength="6", required)
+                        button(type="submit" class="btn") Login
+                        button(type="reset" class="btn reset") Reset
+                p: a(href="/forgot-password") Forgot Password?
+                p Don't have an account? 
+                    a(href="/register") Register here
+
+            .image-container
+                img(src="./assets/img/Screenshot 2024-09-15 154323.png", alt="Welcome Image")

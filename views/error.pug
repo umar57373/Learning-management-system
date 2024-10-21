@@ -1,0 +1,11 @@
+extends layout 
+
+block content-head 
+  title= title 
+
+block content-body   
+  section.error-section
+    .error-container
+      h2 #{statusCode || 'Error'}! Error
+      p.error-message #{message || 'Something went wrong.'}
+      a.error-link(href="/") Return to Homepage

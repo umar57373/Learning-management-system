@@ -1,0 +1,15 @@
+extends layout 
+
+block content-head 
+    title Subscription Success
+  
+block content-body  
+    .subscribe-container
+        .subscribe-icon ✔️
+        h1 Subscription Successful!
+        p Thank you for subscribing! Exciting offers and updates will be sent to your email: 
+        
+         strong #{email}
+        p.offer-text A confirmation email has been sent.
+        a.subscribe-btn(href="/") Go to Homepage       
+

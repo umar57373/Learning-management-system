@@ -1,0 +1,77 @@
+extends userLayout 
+
+block content-head 
+    title LMS Dashboard
+
+block content-body 
+  .main-content
+    .landing
+      h1 Welcome back, #{user.first_name}!
+
+      .quick-actions
+        .action-card
+          a(href="#my-courses") View My Courses
+        .action-card
+          a(href="#upcoming-assignments") Upcoming Assignments
+        .action-card
+          a(href="#course-materials") Course Materials
+        .action-card
+          a(href="#grades") View Grades
+        .action-card
+          a(href="#discussions") Participate in Discussions
+
+      .announcements-banner
+        h2 Latest Announcements
+        .announcement-cards
+          .announcement-card
+            h3 Course Registration Open
+            p Don't forget to register for your next semester courses by the end of this week!
+          .announcement-card
+            h3 Assignment Deadlines
+            p The deadline for the upcoming assignment is next Friday. Make sure to submit your work on time!
+          .announcement-card
+            h3 Guest Lecture
+            p Join us for a guest lecture on "Future of Learning" next Thursday at 3 PM.
+
+    .user-tips
+      h2 Study Tips
+      ul
+        li Set specific goals for each study session.
+        li Take regular breaks to maintain focus.
+        li Use study groups for collaborative learning.
+        li Stay organized with a planner or calendar.
+
+    .faq-section
+      h2 Frequently Asked Questions
+      .accordion
+        .accordion-item
+          .accordion-header
+            span How do I reset my password?
+            button.accordion-icon +
+          .accordion-content
+            p You can reset your password by clicking on the "Forgot Password" link on the login page.
+        .accordion-item
+          .accordion-header
+            span How do I access course materials?
+            button.accordion-icon +
+          .accordion-content
+            p Course materials can be accessed under the "Course Materials" section in your dashboard.
+        .accordion-item
+          .accordion-header
+            span How can I contact my instructor?
+            button.accordion-icon +
+          .accordion-content
+            p You can contact your instructor through the "Messages" feature in your course page.
+        .accordion-item
+          .accordion-header
+            span What should I do if I encounter technical issues?
+            button.accordion-icon +
+          .accordion-content
+            p If you face any technical issues, please contact support at support@lms.com.
+
+    .feedback-section
+      p We value your feedback! 
+      button.feedback-btn Give Feedback
+
+
+  button.scroll-to-top(id="scrollToTopBtn") ↑

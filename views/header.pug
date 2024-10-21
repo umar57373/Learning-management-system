@@ -1,0 +1,21 @@
+header
+  h1 Online Learning Management System
+  body
+    .background-container
+    header
+      .logo
+        img(src='./assets/img/BFFhax5MQTO4jbXr0eozXw.jpeg', alt='LMS Logo')
+nav
+  ul
+    li: a(href="/index") Home
+    li: a(href="/Courses") Courses
+    li: a(href="/aboutus") About Us
+    li: a(href="/contact") Contact Us
+
+    // Conditional rendering based on whether the user is logged in or not
+    if !userId
+      li: a(href="/login") Login
+      li: a(href="/register") Register
+    else
+      li: a(href="/dashboard") Dashboard
+      li: a(href="/logout") Log Out

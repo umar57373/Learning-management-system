@@ -1,0 +1,82 @@
+[
+  {
+    "title": "Web Development",
+    "instructor": "Jose Annunziato",
+    "courseCode": "CS-5610",
+    "term": "2024 Spring",
+    "imageUrl": "https://www.sapphirewebsolutions.com/wp-content/uploads/2019/09/Web-Development-Trends.jpg",
+    "enrolledEmail": "magdalena.duranova@gmail.com"
+  },
+  {
+    "title": "Web Development",
+    "instructor": "Jose Annunziato",
+    "courseCode": "CS-5610",
+    "term": "2024 Spring",
+    "imageUrl": "https://www.sapphirewebsolutions.com/wp-content/uploads/2019/09/Web-Development-Trends.jpg",
+    "enrolledEmail": "shaikv0111@gmail.com"
+  },
+  {
+    "title": "Robotic Science and Systems",
+    "instructor": "Robert Platt",
+    "courseCode": "CS-5335",
+    "term": "2024 Spring",
+    "imageUrl": "https://media.wired.com/photos/5dc21cfe774e490008209a2d/191:100/w_2290,h_1199,c_limit/Science_robots-521754924.jpg",
+    "enrolledEmail": "admin1234567@gmail.com"
+  },
+  {
+    "title": "Web Development",
+    "instructor": "Jose Annunziato",
+    "courseCode": "CS-5610",
+    "term": "2024 Spring",
+    "imageUrl": "https://www.sapphirewebsolutions.com/wp-content/uploads/2019/09/Web-Development-Trends.jpg",
+    "enrolledEmail": "admin1234567@gmail.com"
+  },
+  {
+    "title": "Web Development",
+    "instructor": "Jose Annunziato",
+    "courseCode": "CS-5610",
+    "term": "2024 Spring",
+    "imageUrl": "https://www.sapphirewebsolutions.com/wp-content/uploads/2019/09/Web-Development-Trends.jpg",
+    "enrolledEmail": "magdalena.duranova@gmail.com"
+  },
+  {
+    "title": "Web Development",
+    "instructor": "Jose Annunziato",
+    "courseCode": "CS-5610",
+    "term": "2024 Spring",
+    "imageUrl": "https://www.sapphirewebsolutions.com/wp-content/uploads/2019/09/Web-Development-Trends.jpg",
+    "enrolledEmail": "magdalena.duranova@gmail.com"
+  },
+  {
+    "title": "Web Development",
+    "instructor": "Jose Annunziato",
+    "courseCode": "CS-5610",
+    "term": "2024 Spring",
+    "imageUrl": "https://www.sapphirewebsolutions.com/wp-content/uploads/2019/09/Web-Development-Trends.jpg",
+    "enrolledEmail": "magdalena.duranova@gmail.com"
+  },
+  {
+    "title": "Robotic Science and Systems",
+    "instructor": "Robert Platt",
+    "courseCode": "CS-5335",
+    "term": "2024 Spring",
+    "imageUrl": "https://media.wired.com/photos/5dc21cfe774e490008209a2d/191:100/w_2290,h_1199,c_limit/Science_robots-521754924.jpg",
+    "enrolledEmail": "shaikv0111@gmail.com"
+  },
+  {
+    "title": "Web Development",
+    "instructor": "Jose Annunziato",
+    "courseCode": "CS-5610",
+    "term": "2024 Spring",
+    "imageUrl": "https://www.sapphirewebsolutions.com/wp-content/uploads/2019/09/Web-Development-Trends.jpg",
+    "enrolledEmail": "shaikv0111@gmail.com"
+  },
+  {
+    "title": "Robotic Science and Systems",
+    "instructor": "Robert Platt",
+    "courseCode": "CS-5335",
+    "term": "2024 Spring",
+    "imageUrl": "https://media.wired.com/photos/5dc21cfe774e490008209a2d/191:100/w_2290,h_1199,c_limit/Science_robots-521754924.jpg",
+    "enrolledEmail": "admin1234567@gmail.com"
+  }
+]

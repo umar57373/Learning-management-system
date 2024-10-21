@@ -1,0 +1,130 @@
+{
+  "courses": [
+    {
+      "title": "Web Development",
+      "instructor": "Jose Annunziato",
+      "courseCode": "CS-5610",
+      "term": "2024 Spring",
+      "imageUrl": "https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8d2ViJTIwZGV2ZWxvcG1lbnR8ZW58MHx8MHx8fDA%3D"
+    },
+    {
+      "title": "Robotic Science and Systems",
+      "instructor": "Robert Platt",
+      "courseCode": "CS-5335",
+      "term": "2024 Spring",
+      "imageUrl": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cm9ib3RpY3N8ZW58MHx8MHx8fDA%3D"
+    },
+    {
+      "title": "Database Management Systems",
+      "instructor": "Martin Schedlbauer",
+      "courseCode": "CS-5200",
+      "term": "2024 Spring",
+      "imageUrl": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZGF0YWJhc2V8ZW58MHx8MHx8fDA%3D"
+    },
+    {
+      "title": "Machine Learning",
+      "instructor": "Jose Annunziato",
+      "courseCode": "CS-5800",
+      "term": "2024 Spring",
+      "imageUrl": "https://images.unsplash.com/photo-1527474305487-b87b222841cc?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bWFjaGluZSUyMGxlYXJuaW5nfGVufDB8fDB8fHww"
+    },
+    {
+      "title": "Artificial Intelligence",
+      "instructor": "Sarah Johnson",
+      "courseCode": "CS-5100",
+      "term": "2024 Fall",
+      "imageUrl": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YXJ0aWZpY2lhbCUyMGludGVsbGlnZW5jZXxlbnwwfHwwfHx8MA%3D%3D"
+    },
+    {
+      "title": "Data Structures and Algorithms",
+      "instructor": "Michael Chen",
+      "courseCode": "CS-5800",
+      "term": "2024 Fall",
+      "imageUrl": "https://images.unsplash.com/photo-1616469829941-c7200edec809?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZGF0YSUyMHN0cnVjdHVyZXN8ZW58MHx8MHx8fDA%3D"
+    },
+    {
+      "title": "Cloud Computing",
+      "instructor": "Emily Rodriguez",
+      "courseCode": "CS-6650",
+      "term": "2024 Spring",
+      "imageUrl": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2xvdWQlMjBjb21wdXRpbmd8ZW58MHx8MHx8fDA%3D"
+    },
+    {
+      "title": "Cybersecurity Fundamentals",
+      "instructor": "David Lee",
+      "courseCode": "CS-5770",
+      "term": "2024 Fall",
+      "imageUrl": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y3liZXJzZWN1cml0eXxlbnwwfHwwfHx8MA%3D%3D"
+    },
+    {
+      "title": "Mobile App Development",
+      "instructor": "Lisa Wang",
+      "courseCode": "CS-5520",
+      "term": "2024 Spring",
+      "imageUrl": "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bW9iaWxlJTIwYXBwfGVufDB8fDB8fHww"
+    },
+    {
+      "title": "Software Engineering",
+      "instructor": "James Smith",
+      "courseCode": "CS-5500",
+      "term": "2024 Fall",
+      "imageUrl": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHNvZnR3YXJlJTIwZW5naW5lZXJpbmd8ZW58MHx8MHx8fDA%3D"
+    },
+    {
+      "title": "Computer Networks",
+      "instructor": "Elena Gomez",
+      "courseCode": "CS-5700",
+      "term": "2024 Spring",
+      "imageUrl": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29tcHV0ZXIlMjBuZXR3b3JrfGVufDB8fDB8fHww"
+    },
+    {
+      "title": "Operating Systems",
+      "instructor": "Alan Turing",
+      "courseCode": "CS-5600",
+      "term": "2024 Fall",
+      "imageUrl": "https://images.unsplash.com/photo-1629654291663-b91ad427698f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8b3BlcmF0aW5nJTIwc3lzdGVtfGVufDB8fDB8fHww"
+    },
+    {
+      "title": "Computer Graphics",
+      "instructor": "Grace Hopper",
+      "courseCode": "CS-5310",
+      "term": "2024 Spring",
+      "imageUrl": "https://images.unsplash.com/photo-1573164713988-8665fc963095?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29tcHV0ZXIlMjBncmFwaGljc3xlbnwwfHwwfHx8MA%3D%3D"
+    },
+    {
+      "title": "Quantum Computing",
+      "instructor": "Richard Feynman",
+      "courseCode": "CS-5870",
+      "term": "2024 Fall",
+      "imageUrl": "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cXVhbnR1bSUyMGNvbXB1dGluZ3xlbnwwfHwwfHx8MA%3D%3D"
+    },
+    {
+      "title": "Natural Language Processing",
+      "instructor": "Noam Chomsky",
+      "courseCode": "CS-6120",
+      "term": "2024 Spring",
+      "imageUrl": "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bmF0dXJhbCUyMGxhbmd1YWdlJTIwcHJvY2Vzc2luZ3xlbnwwfHwwfHx8MA%3D%3D"
+    },
+    {
+      "title": "Blockchain Technology",
+      "instructor": "Satoshi Nakamoto",
+      "courseCode": "CS-5990",
+      "term": "2024 Fall",
+      "imageUrl": "https://images.unsplash.com/photo-1639762681057-408e52192e55?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YmxvY2tjaGFpbnxlbnwwfHwwfHx8MA%3D%3D"
+    },
+    {
+      "title": "Virtual Reality",
+      "instructor": "Palmer Luckey",
+      "courseCode": "CS-5850",
+      "term": "2024 Spring",
+      "imageUrl": "https://images.unsplash.com/photo-1592478411213-6153e4ebc07d?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dmlydHVhbCUyMHJlYWxpdHl8ZW58MHx8MHx8fDA%3D"
+    },
+    {
+      "title": "Internet of Things",
+      "instructor": "Kevin Ashton",
+      "courseCode": "CS-5910",
+      "term": "2024 Fall",
+      "imageUrl": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aW50ZXJuZXQlMjBvZiUyMHRoaW5nc3xlbnwwfHwwfHx8MA%3D%3D"
+    }
+  ]
+}

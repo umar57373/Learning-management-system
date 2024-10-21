@@ -1,0 +1,106 @@
+extends userLayout
+
+block content-head
+  title Latest YouTube Videos - LMS
+  style.
+
+    h1 {
+      text-align: center;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 30px;
+    }
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .video-card {
+      background-color: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease-in-out;
+    }
+    .video-card:hover {
+      transform: translateY(-5px);
+    }
+    .video-thumbnail {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+    }
+    .video-thumbnail iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    .card-body {
+      padding: 15px;
+    }
+    .card-title {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 10px;
+    }
+    .card-text {
+      font-size: 0.9rem;
+      color: #666;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+block content-body
+  .container
+    h1 Latest Videos of DSA 
+    #videos.video-grid
+
+  script.
+    const youtubeApiKey = 'AIzaSyCWYU7MIrNlYLXf3WABuvlQxBmC8YzBFSA';
+    const channelId = 'UClOQrZIZQZojI3CmJ3jC2eg';
+    let nextPageToken = ''; // Initialize for pagination
+
+    function fetchVideos(pageToken = '') {
+      fetch(`https://www.googleapis.com/youtube/v3/search?key=${youtubeApiKey}&channelId=${channelId}&part=snippet,id&order=date&maxResults=6&pageToken=${pageToken}`)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
+        .then(data => {
+          const videosContainer = document.getElementById('videos');
+          data.items.forEach(video => {
+            const videoCard = document.createElement('div');
+            videoCard.classList.add('video-card');
+            videoCard.innerHTML = `
+              <div class="video-thumbnail">
+                <iframe src="https://www.youtube.com/embed/${video.id.videoId}" frameborder="0" allowfullscreen></iframe>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">${video.snippet.title}</h5>
+                <p class="card-text">${video.snippet.description}</p>
+              </div>
+            `;
+            videosContainer.appendChild(videoCard);
+          });
+
+          // Check if there is a nextPageToken to fetch more videos
+          if (data.nextPageToken) {
+            nextPageToken = data.nextPageToken;
+            // Call fetchVideos again to load more videos
+            fetchVideos(nextPageToken);
+          }
+        })
+        .catch(error => console.error('Error fetching YouTube videos:', error));
+    }
+
+    // Initial fetch
+    fetchVideos();

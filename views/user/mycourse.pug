@@ -1,0 +1,23 @@
+extends userLayout
+
+block content-head
+    title My Courses
+    link(rel="stylesheet" href="/assets/css/userStyle.css")
+
+block content-body
+    .main-content
+        h1 My Enrolled Courses
+        .available-courses
+            .row#myCourseContainer
+                // Handle the case where courses might be undefined
+                if courses && courses.length > 0
+                    each course in courses
+                        .course-card.col-lg-6.col-xl-4
+                            figure.img-caption
+                                img.card-img(src=course.imageUrl, alt=course.courseTitle)
+                                .card-caption
+                                    figcaption.card-title #{course.courseTitle}
+                                    figcaption #{course.instructor}
+                                    figcaption #{course.courseCode} | #{course.term}
+                else
+                    p.text-center No courses enrolled yet.

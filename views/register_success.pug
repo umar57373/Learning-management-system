@@ -1,0 +1,18 @@
+extends layout 
+
+block content-head 
+    title Registration Successful
+    
+block content-body 
+  
+    section.success-section
+        .success-container
+            h2 Registration Successful!
+            p Welcome, #{first_name}! Your registration was successful.
+            img(src="/assets/img/flip-book.gif" alt="Success") 
+            p#countdown You will be redirected to the login page in 10 seconds. // Countdown message
+            a.success-link(href="/") Go to Home
+
+    script(src="/assets/js/successRegisterCounter.js") 
+
+

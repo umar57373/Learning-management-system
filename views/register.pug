@@ -1,0 +1,115 @@
+extends layout
+
+block content-head
+  title Register - LMS
+  style.
+    .register-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        width: 900px;
+        margin: 40px auto;
+    }
+    .form-container {
+        width: 50%;
+        padding: 1rem;
+    }
+    .image-container {
+        width: 45%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .image-container img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+    fieldset {
+        border: 2px solid #3498db;
+        padding: 20px;
+        border-radius: 8px;
+    }
+    legend {
+        font-size: 1.5rem;
+        color: #3498db;
+        font-weight: bold;
+        padding: 0 10px;
+    }
+    .form-group {
+        margin-bottom: 1rem;
+    }
+    .form-group label {
+        display: block;
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        color: #333;
+    }
+    .form-group input {
+        width: 100%;
+        padding: 0.8rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+    .btn {
+        background-color: #3498db;
+        color: white;
+        border: none;
+        padding: 0.8rem 1.5rem;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    .btn:hover {
+        background-color: #2980b9;
+    }
+    .btn.reset {
+        background-color: #e74c3c;
+    }
+    .btn.reset:hover {
+        background-color: #c0392b;
+    }
+
+block content-body
+
+  main
+    section.intro
+      h1 Create Your Account
+      p Join our learning community and start your educational journey.
+
+    section.register-container
+      div.form-container
+        form#registerForm(action="/user/register", method="POST")
+          fieldset
+            legend Registration Form
+            div.form-group
+              label(for="first_name") First Name:
+              input(type="text", id="first_name", name="first_name", placeholder="First Name" required)
+            div.form-group
+              label(for="last_name") Last Name:
+              input(type="text", id="last_name", name="last_name", placeholder="Last Name" required)
+            div.form-group
+              label(for="email") Email:
+              input(type="email", id="email", name="email", placeholder="Email" required)
+            div.form-group
+              label(for="password") Password:
+              input(type="password", id="password", name="password", placeholder="Password" minlength="6" required)
+            div.form-group
+              label(for="confirm_password") Confirm Password:
+              input(type="password", id="confirm_password", name="confirm_password", placeholder="Confirm Password" minlength="6" required)
+            div.form-group
+              label(for="phone") Phone Number:
+              input(type="tel", id="phone", name="phone", placeholder="Phone Number" required)
+            button(type="submit" class="btn") Submit
+            button(type="reset" class="btn reset") Reset
+        
+        p Already have an account? 
+          a(href="/login") Login here
+
+      div.image-container
+        img(src="/assets/img/th (2).jpeg", alt="Register Image")

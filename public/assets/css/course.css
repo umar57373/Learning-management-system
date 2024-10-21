@@ -1,0 +1,121 @@
+/*=================
+Main Gallery
+=================*/
+.gallery{
+    margin: 1rem auto;
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+.gallery h1{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/*=====================
+Enrollment Course Card
+======================*/
+.active-courses {
+    /*padding: 1rem;*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 3rem;
+    box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, .1);
+    border-radius: 15px;
+    background-color: rgba(255,255,255,0.05);
+}
+.active-courses .row {
+    justify-content: inherit;
+}
+.course-card {
+    position: relative;
+    max-width: 520px;
+    width: 400px;
+    height: 240px;
+    margin-bottom: 4rem;
+    padding: 1.5rem;
+    border-radius: 10px;
+    line-height: 200%;
+}
+
+.card-title {
+    font-size: 28px;
+}
+
+.card-caption {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    color: #fff;
+    left: 0;
+    top: 10%;
+    padding: 1em;
+    font-weight: 700;
+    z-index: 2;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    cursor: initial;
+}
+
+.img-caption {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    box-shadow: 0.5rem 0.5rem 0.75rem rgba(0, 0, 0, .3);
+    border-radius: 15px;
+    transition: all 0.2s ease-in-out;
+}
+
+/*.img-caption:hover {*/
+/*    box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, .4);*/
+/*    transform: scale(1.1, 1.1);*/
+/*    -webkit-transform: scale(1.1, 1.1);*/
+/*}*/
+
+/*.img-caption:hover:after {*/
+/*    opacity: 1;*/
+/*}*/
+
+.img-caption .card-img {
+    display: block;
+    max-width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.img-caption:after {
+    content: "";
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0) linear-gradient(to bottom, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0.7) 100%) repeat 0 0;
+    z-index: 1;
+    border-radius: 15px;
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.card-detail {
+    position: absolute;
+    bottom: 10%;
+}
+.go-icon {
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    cursor: pointer;
+}
+.go-icon:hover{
+    transform: scale(1.75);
+    transition: 0.2s ease-in-out;
+}
