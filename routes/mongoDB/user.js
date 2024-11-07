@@ -1,11 +1,9 @@
 const express = require('express');
-const jwt = require('jsonwebtoken');
 const User = require('../../models/User');
 const { protect } = require('../../middleware/auth');
 const multer = require('multer');
 const path = require('path');
 const { v4: uuidv4 } = require('uuid');
-
 require('dotenv').config();  // Load environment variables
 
 const router = express.Router();
@@ -25,7 +23,7 @@ router.post('/register', async (req, res, next) => {
         console.log(error.message);
         const err = new Error('Registration is not successful. Try after sometime!');
         err.status = 500;
-        return next(err); // Forward to error-handling middleware  
+        return next(err); // Forward to error-handling middleware
     }
 });
 
@@ -56,19 +54,23 @@ router.post('/login', async (req, res, next) => {
 });
 
 // User dashboard
-router.get('/dashboard', (req, res) => {
-    if (!req.session.userId) return res.redirect('/login');
+router.get('/dashboard', (req, res, next) => {
+    if (!req.session.userId) {
+        return res.redirect('/login');
+    }
     res.render('user/dashboard', { user: req.session.user });
 });
 
 // User profile
-router.get('/profile', (req, res) => {
-    if (!req.session.userId) return res.redirect('/login');
+router.get('/profile', (req, res, next) => {
+    if (!req.session.userId) {
+        return res.redirect('/login');
+    }
     res.render('user/profile', { user: req.session.user });
 });
 
 // User logout
-router.get('/logout', (req, res) => {
+router.get('/logout', (req, res, next) => {
     req.session.destroy((error) => {
         if (error) {
             const err = new Error('Logout is not successful. Try after sometime!');
@@ -79,8 +81,6 @@ router.get('/logout', (req, res) => {
         res.redirect('/login');
     });
 });
-
-
 
 // Multer configuration for file uploads
 const storage = multer.diskStorage({
@@ -95,7 +95,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({
     storage: storage,
-    limits: { fileSize: 5 * 1024 * 1024 },
+    limits: { fileSize: 5 * 1024 * 1024 }, // Limit file size to 5 MB
     fileFilter: (req, file, cb) => {
         const filetypes = /jpeg|jpg|png|gif/;
         const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
@@ -109,7 +109,7 @@ const upload = multer({
 });
 
 // Edit profile picture
-router.put('/edit-profile-pic/:id', upload.single('profile_pic'), async (req, res) => {
+router.put('/edit-profile-pic/:id', upload.single('profile_pic'), async (req, res, next) => {
     try {
         if (!req.file) {
             return res.status(400).send('No file uploaded.');
@@ -123,18 +123,18 @@ router.put('/edit-profile-pic/:id', upload.single('profile_pic'), async (req, re
             return res.status(404).send('User not found.');
         }
 
-        req.session.user = await User.findById(req.params.id);
+        req.session.user = user; // Update the session with the new user info
         res.json({
             message: 'Profile Picture has been uploaded successfully!',
             file: req.file
         });
     } catch (err) {
-        res.status(500).send(err.message);
+        next(err); // Forward error to error handler
     }
 });
 
 // Edit personal information
-router.put('/edit-personal-info/:id', async (req, res) => {
+router.put('/edit-personal-info/:id', async (req, res, next) => {
     try {
         const user = await User.findByIdAndUpdate(req.params.id, req.body, { new: true });
 
@@ -142,17 +142,17 @@ router.put('/edit-personal-info/:id', async (req, res) => {
             return res.status(404).send('User not found.');
         }
 
-        req.session.user = await User.findById(req.params.id);
+        req.session.user = user; // Update the session with the new user info
         res.json({
             message: 'Personal information has been successfully updated'
         });
     } catch (err) {
-        res.status(500).send(err.message);
+        next(err); // Forward error to error handler
     }
 });
 
 // Edit contact information
-router.put('/edit-contact-info/:id', async (req, res) => {
+router.put('/edit-contact-info/:id', async (req, res, next) => {
     try {
         const user = await User.findByIdAndUpdate(req.params.id, req.body, { new: true });
 
@@ -160,17 +160,17 @@ router.put('/edit-contact-info/:id', async (req, res) => {
             return res.status(404).send('User not found.');
         }
 
-        req.session.user = await User.findById(req.params.id);
+        req.session.user = user; // Update the session with the new user info
         res.json({
             message: 'Contact information has been successfully updated'
         });
     } catch (err) {
-        res.status(500).send(err.message);
+        next(err); // Forward error to error handler
     }
 });
 
 // Delete user profile
-router.delete('/delete-profile/:id', async (req, res) => {
+router.delete('/delete-profile/:id', async (req, res, next) => {
     try {
         const user = await User.findByIdAndDelete(req.params.id);
 
@@ -182,13 +182,12 @@ router.delete('/delete-profile/:id', async (req, res) => {
             if (error) {
                 const err = new Error('Logout is not successful. Try after sometime!');
                 err.status = 500;
-                return next(err); // Forward to error-handling middleware
+                return next(err); // Forward error to error handler
             }
+            res.json({ message: 'User deleted successfully!' });
         });
-
-        res.json({ message: 'User deleted successfully!' });
     } catch (err) {
-        res.status(500).send(err.message);
+        next(err); // Forward error to error handler
     }
 });
 
