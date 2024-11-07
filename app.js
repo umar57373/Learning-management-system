@@ -4,13 +4,13 @@ const fs = require('fs');
 const cookieParser = require('cookie-parser');
 const url = require('url');
 const session = require('express-session');
+const cors = require('cors');  // Import CORS
 const connectDB = require('./config/config');
 require('dotenv').config();  // Load environment variables
 
 connectDB(); // Connect to MongoDB
 
 // Importing routes
-
 const dsaRoute = require('./routes/dsaRoute');
 const CoursesRoute = require('./routes/courses');
 const userRoute = require('./routes/mongoDB/user');
@@ -18,6 +18,17 @@ const subscribeRoute = require('./routes/subscribe');
 
 // Initialize express app
 const app = express();
+
+// CORS configuration
+const corsOptions = {
+    origin: 'https://learning-management-system-lxj1-2retco8nk.vercel.app', // Vercel URL
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
+    allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
+    credentials: true, // If you want to support cookies or authorization headers
+};
+
+// Apply CORS middleware
+app.use(cors(corsOptions));
 
 // Template engine
 app.set('view engine', 'pug');
