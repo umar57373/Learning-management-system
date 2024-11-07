@@ -2,14 +2,14 @@ extends userLayout
 
 block content-head 
     title My Profile
-    link(rel="stylesheet", href="/assets/css/profile.css")
+    link(rel="stylesheet", href="https://learning-management-system-lxj1-2retco8nk.vercel.app/assets/css/profile.css")
 
 block content-body 
     .profile-container
         .profile-main-content
             .profile-sidebar
                 .profile-pic
-                    img(src=`/uploads/profile_pics/${user.profile_pic}` alt="Profile Picture")
+                    img(src=`https://learning-management-system-lxj1-2retco8nk.vercel.app/uploads/profile_pics/${user.profile_pic}` alt="Profile Picture")
                 h1 #{user.first_name} #{user.last_name}
                 p User Profile
                 button.edit-btn(onclick="openOverlay('profilePicOverlay')")
