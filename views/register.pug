@@ -84,32 +84,28 @@ block content-body
 
     section.register-container
       div.form-container
-        form#registerForm(action="/user/register", method="POST")
+        form#registerForm(action="https://learning-management-system-lxj1-2retco8nk.vercel.app/user/register", method="POST")
           fieldset
-            legend Registration Form
-            div.form-group
+            legend Register
+            .form-group
               label(for="first_name") First Name:
-              input(type="text", id="first_name", name="first_name", placeholder="First Name" required)
-            div.form-group
+              input(type="text", id="first_name", name="first_name", required)
+            .form-group
               label(for="last_name") Last Name:
-              input(type="text", id="last_name", name="last_name", placeholder="Last Name" required)
-            div.form-group
+              input(type="text", id="last_name", name="last_name", required)
+            .form-group
               label(for="email") Email:
-              input(type="email", id="email", name="email", placeholder="Email" required)
-            div.form-group
+              input(type="email", id="email", name="email", required)
+            .form-group
               label(for="password") Password:
-              input(type="password", id="password", name="password", placeholder="Password" minlength="6" required)
-            div.form-group
+              input(type="password", id="password", name="password", required)
+            .form-group
               label(for="confirm_password") Confirm Password:
-              input(type="password", id="confirm_password", name="confirm_password", placeholder="Confirm Password" minlength="6" required)
-            div.form-group
-              label(for="phone") Phone Number:
-              input(type="tel", id="phone", name="phone", placeholder="Phone Number" required)
-            button(type="submit" class="btn") Submit
+              input(type="password", id="confirm_password", name="confirm_password", required)
+            button(type="submit" class="btn") Register
             button(type="reset" class="btn reset") Reset
-        
         p Already have an account? 
-          a(href="/login") Login here
+          a(href="https://learning-management-system-lxj1-2retco8nk.vercel.app/login") Login here
 
-      div.image-container
-        img(src="/assets/img/th (2).jpeg", alt="Register Image")
+      .image-container
+        img(src="https://learning-management-system-lxj1-2retco8nk.vercel.app/assets/img/Screenshot 2024-09-15 154323.png", alt="Welcome Image")
